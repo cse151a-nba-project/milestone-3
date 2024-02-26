@@ -38,7 +38,11 @@ Model Testing MSE: 24.089338248039507
 Model Testing MAE (Mean Absolute Error): 3.8786683795508496
 Model Testing R^2 (Coeff of Deter.): 0.8878729896447337
 
-As illustrated above, our testing mestrics are slightly worse than the training metrics, but not significantly worse. This indicates that there is no significant overfitting occuring. Additionally, the R^2 scores of 0.91 and 0.88 are very promising, indicating that a very high percentage of the variation in WL% can be predicted using the stats we extracted and our simple linear regressor.
+As illustrated above, our testing mestrics are slightly worse than the training metrics, but not significantly worse. This indicates that there is no significant overfitting occuring. The MSE of our model is still quite high, suggesting that our model cannot adequately predict the WL% to the desired accuracy. However, the R^2 scores of 0.91 and 0.88 are very promising, indicating that a very high percentage of the variation in WL% has been captured by the linear regressor, indicating that with a more complex model we may be able to further improve the performance of our model.
+
+# 4. Where does your model fit in the fitting graph.
+
+We still have quite a bit of error (our MSE is > 20 for both testing and training) while a good value would be around 1-5 (an approximation, we're not exactly sure how good we can get it, but we believe it can be improved). To interpret this MSE, an error of 9 would translate to an average difference of 3% between predicted winning percentage and actual, which means 2-3 more / less games won.  Based on the test and training errors themselves, we can't differentiate if we're underfitting or having a good fit, because they're quite similar, with the test error only being slightly greater than the training error (~24.1 vs ~21.8). We believe the model is underfitting and has a high error that can be improved upon using more complex models.
 
 # 5. Future plans
 
@@ -47,7 +51,7 @@ Based on the analysis of your current model's performance with linear regression
 We want to experiment with polynomial regression next because it can model relationships between variables that are not linear, capturing more complex patterns in the dataset. Given the nature of sports statistics and team performance metrics, the relationship between the input features (advanced player statistics) and the output (team win percentages) might not be linear but could have a polynomial relationship. Polynomial regression can provide a better fit to the dataset by adding degrees of freedom through higher-order terms, potentially reducing the underfitting observed with the linear regression model.
 
 Planned Strategy:
-We plan to experiment with different polynomial degrees to find the optimal level of complexity that improves the model's performance without leading to overfitting. This involves transforming our input features into polynomial features and then applying linear regression to these transformed features.
+We plan to experiment with different polynomial degrees to find the optimal level of complexity that improves the model's performance without overfitting. This involves transforming our input features into polynomial features and then applying linear regression to these transformed features.
 Cross-validation will be used to evaluate the model's performance and prevent overfitting by selecting the degree of the polynomial that provides the best generalization to unseen data.
 
 Deep Neural Network (DNN) Regression
