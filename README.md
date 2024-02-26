@@ -1,5 +1,7 @@
 # CSE 151A Milestone 3: First Model
 
+### **Note: For graphs, please see notebook. They are included there.**
+
 Repo link: https://github.com/cse151a-nba-project/milestone-3/
 Data link: https://github.com/cse151a-nba-project/data/
 
